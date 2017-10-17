@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @truck.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @truck.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @truck.phone %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @truck.website %>
+</p>
+
+<%= link_to 'Edit', edit_truck_path(@truck), class: "btn btn-link" %> |
+<%= link_to 'Back', trucks_path, class: "btn btn-link" %>
