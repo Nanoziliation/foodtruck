@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Trucks</h1>
+<div class="jumbotron">
+	<h2>Best way to find all the great trucks</h2>
+	<h3>Get what's popping in the D.</br>
+		Leave reviews, find locations, and share lunch plans with friends.</h3>
+</div>
 
 <table class="table table-hover">
   <thead>
@@ -19,7 +23,7 @@
         <td><%= truck.name %></td>
         <td><%= truck.address %></td>
         <td><%= truck.phone %></td>
-        <td><%= truck.website %></td>
+        <td><%= link_to truck.website, truck.website %></td>
         <td><%= link_to 'Show', truck, class: "btn btn-link" %></td>
         <td><%= link_to 'Edit', edit_truck_path(truck), class: "btn btn-link" %></td>
         <td><%= link_to 'Destroy', truck, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
@@ -31,3 +35,5 @@
 <br>
 
 <%= link_to 'New Truck', new_truck_path, class: "btn btn-link" %>
+<br>
+<%= image_tag "https://t4.ftcdn.net/jpg/00/48/99/59/240_F_48995938_gwlwDQ7fiTVevihBUiVdMBd4QT6yCszi.jpg" %>
