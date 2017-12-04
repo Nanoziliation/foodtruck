@@ -19,5 +19,7 @@
   <%= @truck.website %>
 </p>
 
+<%= link_to "Write a Review", new_truck_review_path(@truck), class: "btn btn-primary" %>
+
 <%= link_to 'Edit', edit_truck_path(@truck), class: "btn btn-link" %> |
 <%= link_to 'Back', trucks_path, class: "btn btn-link" %>
