@@ -1,25 +1,40 @@
-<%= image_tag @truck.image_url %>
-<p>
-  <strong>Name:</strong>
-  <%= @truck.name %>
-</p>
+<div class="row">
+	<div class="col-md-3">
+				<%= image_tag @truck.image_url %>
+				<p>
+					<strong>Name:</strong>
+					<%= @truck.name %>
+				</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @truck.address %>
-</p>
+				<p>
+					<strong>Address:</strong>
+					<%= @truck.address %>
+				</p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @truck.phone %>
-</p>
+				<p>
+					<strong>Phone:</strong>
+					<%= @truck.phone %>
+				</p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @truck.website %>
-</p>
+				<p>
+					<strong>Website:</strong>
+					<%= @truck.website %>
+				</p>
 
-<%= link_to "Write a Review", new_truck_review_path(@truck), class: "btn btn-primary" %>
+				<%= link_to "Write a Review", new_truck_review_path(@truck), class: "btn btn-primary" %>
+	</div>
+
+	<div class="col-md-9">
+				<% if @reviews.blank? %>
+					<h3>No reviews yet. Be the first to write one!</h3>
+				<% else %>
+				<% @reviews.each do |review| %>
+					<p><%= review.rating %></p>
+					<p><%= review.comment %></p>
+				<% end %>
+				<% end %>
+	</div>
+</div>
 
 <%= link_to 'Edit', edit_truck_path(@truck), class: "btn btn-link" %> |
 <%= link_to 'Back', trucks_path, class: "btn btn-link" %>
