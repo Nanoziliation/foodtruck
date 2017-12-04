@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:edit, :update, :destroy]
+	before_action :set_truck
 	before_action :authenticate_user!
 
   # GET /reviews
@@ -19,6 +20,7 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
 		@review.user_id = current_user.id
+		@review.truck_id = @truck.id
 
     respond_to do |format|
       if @review.save
@@ -60,6 +62,10 @@ class ReviewsController < ApplicationController
     def set_review
       @review = Review.find(params[:id])
     end
+
+		def set_truck
+			@truck = Truck.find(params[:truck_id])
+		end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
